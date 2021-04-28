@@ -13,10 +13,10 @@ services:
       - "5432"
 
   backend:
-    build: .
-    command: bash -c "python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
+    build: ./api/
+    command: bash -c "wget -qO- https://raw.githubusercontent.com/eficode/wait-for/v2.1.1/wait-for | sh -s -- db:5432 -- echo Success && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
     volumes:
-      - .:/backend
+      - ./api:/backend
     expose:
       - "8000"
     depends_on:
