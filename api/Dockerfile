@@ -23,3 +23,4 @@ RUN apt-get update
 
 # Qual porta será utilizada
 EXPOSE 8000
+EXPOSE 5432
