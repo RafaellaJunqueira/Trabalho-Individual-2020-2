@@ -1,6 +1,7 @@
 # Origem do tipo imagem que esse docker vai ter 
 FROM python:3
 ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE 1
 
 ARG DJANGO_ALLOWED_HOSTS
 ARG DJANGO_SECRET_KEY
@@ -13,11 +14,11 @@ ENV DJANGO_CORS_ORIGIN_WHITELIST $DJANGO_CORS_ORIGIN_WHITELIST
 RUN mkdir /backend
 WORKDIR /backend
 # copiar o projeto local pra imagem do conteiner
-COPY . /backend/
+ADD . /backend/
 COPY requirements.txt manage.py api task /backend/
 
 # comandos de instalação
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 RUN apt-get update
 
 # Qual porta será utilizada
