@@ -17,10 +17,22 @@ services:
     command: bash -c "wget -qO- https://raw.githubusercontent.com/eficode/wait-for/v2.1.1/wait-for | sh -s -- db:5432 -- echo Success && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./api:/backend
-    expose:
-      - "8000"
+    ports:
+      - "8000:8000"
     depends_on:
       - db
+
+  frontend:
+    build: ./client/
+    command: /bin/sh -c "yarn && quasar dev"
+    volumes:
+      - ./client:/frontend/
+      - /frontend/node_modules
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - backend
 
 volumes:
   postgres_data:
