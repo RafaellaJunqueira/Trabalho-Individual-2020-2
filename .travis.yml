@@ -1,0 +1,11 @@
+language: javascript
+
+node_js:
+  - node
+
+install:
+  - npm run lint
+  - npm run test:coveralls
+
+notifications:
+  email: false
