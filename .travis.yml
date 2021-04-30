@@ -1,5 +1,5 @@
 language: python
-
+  
 python:
   - 3.6
 
@@ -13,16 +13,8 @@ before_install:
 
 script:
   - docker-compose up --build -d
+  - yarn test:coveralls
   # - npm ci
-  # - npm run test:coveralls
-
-# jobs:
-#   include:
-#     - stage: build
-#     - stage: test
-#       script:
-#       - docker-compose run client yarn quasar test --unit jest
-#       - docker-compose run api ./test_api.sh
 
 after_script:
   - docker-compose down --remove-orphans
