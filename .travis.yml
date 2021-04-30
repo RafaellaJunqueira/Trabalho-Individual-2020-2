@@ -1,20 +1,26 @@
-language: python
-  
-python:
-  - 3.6
+language: generic
 
 services:
   - docker
+
+branches:
+    only:
+        - master
 
 sudo: required
 
 before_install:
   - pip3 install docker-compose
 
+matrix:
+    include:
+        - env: TARGET=api/api
+        - env: TARGET=client
+
 script:
   - docker-compose up --build -d
-  - yarn test:coveralls
-  # - npm ci
+  # - yarn test:coveralls
+  - if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $TARGET;
 
 after_script:
   - docker-compose down --remove-orphans
