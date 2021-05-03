@@ -23,7 +23,6 @@ matrix:
 
 script:
   - docker-compose up --build -d
-  # - if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $TARGET;
 
 after_script:
   - docker-compose down --remove-orphans
