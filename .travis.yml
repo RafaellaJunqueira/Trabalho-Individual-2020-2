@@ -1,16 +1,20 @@
-language: generic
+language: python
 
-services:
-  - docker
+python:
+  - 3.6
+
+sudo: required
 
 branches:
     only:
         - master
 
-sudo: required
+services:
+  - docker
 
 before_install:
   - pip3 install docker-compose
+
 
 matrix:
     include:
@@ -19,8 +23,7 @@ matrix:
 
 script:
   - docker-compose up --build -d
-  # - yarn test:coveralls
-  - if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $TARGET;
+  # - if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $TARGET;
 
 after_script:
   - docker-compose down --remove-orphans
