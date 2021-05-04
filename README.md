@@ -1,3 +1,6 @@
+[![Build Status](https://www.travis-ci.com/RafaellaJunqueira/Trabalho-Individual-2020-2.svg?branch=master)](https://www.travis-ci.com/RafaellaJunqueira/Trabalho-Individual-2020-2)   [![Coverage Status](https://coveralls.io/repos/github/RafaellaJunqueira/Trabalho-Individual-2020-2/badge.svg)](https://coveralls.io/github/RafaellaJunqueira/Trabalho-Individual-2020-2)
+
+
 # Trabalho Individual 2020.2
 
 
