@@ -9,4 +9,6 @@ WORKDIR /frontend
 COPY package*.json ./frontend
 COPY . /frontend/
 
-EXPOSE 8000
+CMD quasar dev
+
+EXPOSE 8081
