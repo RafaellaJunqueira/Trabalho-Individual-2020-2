@@ -1,5 +1,38 @@
 [![Build Status](https://www.travis-ci.com/RafaellaJunqueira/Trabalho-Individual-2020-2.svg?branch=master)](https://www.travis-ci.com/RafaellaJunqueira/Trabalho-Individual-2020-2)   [![Coverage Status](https://coveralls.io/repos/github/RafaellaJunqueira/Trabalho-Individual-2020-2/badge.svg)](https://coveralls.io/github/RafaellaJunqueira/Trabalho-Individual-2020-2)
 
+# Entrega Trabalho Individual 2020.2
+Nome: Rafaella Junqueira
+Matrícula: 160142628
+
+### 1. Conteinerização
+Foram criados dois Dockerfile's, um para o backend e um para o frontend:
+* [Dockerfile Frontend](https://github.com/RafaellaJunqueira/Trabalho-Individual-2020-2/blob/master/client/Dockerfile)
+* [Dockerfile backend](https://github.com/RafaellaJunqueira/Trabalho-Individual-2020-2/blob/master/api/Dockerfile)
+
+Também foi criado um orquestrador para os contêineres usando Docker Compose. Ainda neste documento, encontra-se a dockerização do banco de dados:
+* [Docker Compose](https://github.com/RafaellaJunqueira/Trabalho-Individual-2020-2/blob/master/docker-compose.yml)
+
+O projeto pode ser executando utilizando o comando:
+```
+sudo docker-compose up
+```
+
+A aplicação está disponível nas seguintes portas:
+* Backend: `0.0.0.0:8000/task/`
+![image](https://user-images.githubusercontent.com/43728276/117077789-1eee9900-ad0f-11eb-85a9-dff9ae259b26.png)
+
+* Frontend: `http://0.0.0.0:8080`
+![image](https://user-images.githubusercontent.com/43728276/117080837-041f2300-ad15-11eb-8d05-691b08e07aa7.png)
+
+
+### 2. Integração contínua
+A integração contínua foi feita utlizando o Travis CI. Documento disponível em:
+* Integração com [travis](https://github.com/RafaellaJunqueira/Trabalho-Individual-2020-2/blob/master/.travis.yml)
+
+
+
+🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀
+
 
 # Trabalho Individual 2020.2
 
@@ -14,7 +47,6 @@ O sistema se trata de uma aplicação Web, cuja funcionalidade consiste numa lis
 - Banco de Dados PostgreSQL;
 
 Para executar a aplicação em sua máquina, basta seguir o passo-a-passo descrito no arquivos s README das pastas [api](./api/README.md) e [client](./client/README.md).
-
 
 ## Critérios de avaliação
 
