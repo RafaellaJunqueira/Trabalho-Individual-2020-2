@@ -10,6 +10,10 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - yarn install
 
+install:
+  - pip install coveralls
+
+
 jobs:
   include:
     - stage: build
@@ -18,10 +22,13 @@ jobs:
     - stage: test
       script:
       - docker-compose run backend python3 manage.py test
-      - quasar test --unit jest
+      - docker-compose run api ./test_api.sh
 
 after_script:
   - docker-compose down --remove-orphans
+
+after_success:
+  - coveralls
 
 notifications:
   email: false
