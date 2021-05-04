@@ -1,7 +1,4 @@
-language: python
-
-python:
-  - 3.6
+language: generic
 
 services:
   - docker
@@ -17,8 +14,7 @@ jobs:
     
     - stage: test
       script:
-      - yarn quasar test --unit jest
-      - docker-compose run api ./test_api.sh
+      - docker-compose run backend python3 manage.py test
 
 after_script:
   - docker-compose down --remove-orphans
