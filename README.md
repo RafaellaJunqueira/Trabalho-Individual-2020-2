@@ -21,7 +21,7 @@ A aplicação está disponível nas seguintes portas:
 * Backend: `0.0.0.0:8000/task/`
 ![image](https://user-images.githubusercontent.com/43728276/117077789-1eee9900-ad0f-11eb-85a9-dff9ae259b26.png)
 
-* Frontend: `http://0.0.0.0:8080`
+* Frontend: `http://0.0.0.0:8081`
 ![image](https://user-images.githubusercontent.com/43728276/117080837-041f2300-ad15-11eb-8d05-691b08e07aa7.png)
 
 
