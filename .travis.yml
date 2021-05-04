@@ -22,10 +22,7 @@ jobs:
       script:
       - docker-compose run backend python3 manage.py test
       - docker-compose run frontend quasar test --unit jest
-
-script:
-  - 
-
+      - docker-compose run frontend test:coveralls
 after_script:
   - docker-compose down --remove-orphans
 
