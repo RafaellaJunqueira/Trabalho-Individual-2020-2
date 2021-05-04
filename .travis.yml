@@ -18,6 +18,7 @@ jobs:
     - stage: test
       script:
       - docker-compose run backend python3 manage.py test
+      - quasar test --unit jest
 
 after_script:
   - docker-compose down --remove-orphans
