@@ -13,7 +13,6 @@ before_install:
 install:
   - pip install coveralls
 
-
 jobs:
   include:
     - stage: build
@@ -22,7 +21,10 @@ jobs:
     - stage: test
       script:
       - docker-compose run backend python3 manage.py test
-      - docker-compose run api ./test_api.sh
+      - docker-compose run frontend quasar test --unit jest
+
+script:
+  - 
 
 after_script:
   - docker-compose down --remove-orphans
