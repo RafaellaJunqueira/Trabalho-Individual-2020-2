@@ -3,8 +3,6 @@ language: python
 python:
   - 3.6
 
-sudo: required
-
 services:
   - docker
 
@@ -14,7 +12,7 @@ before_install:
 jobs:
   include:
     - stage: build
-    - script: docker-compose up --build -d
+      script: docker-compose up --build -d
 
 after_script:
   - docker-compose down --remove-orphans
