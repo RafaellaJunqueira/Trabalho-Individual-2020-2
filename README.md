@@ -29,6 +29,10 @@ A aplicação está disponível nas seguintes portas:
 A integração contínua foi feita utlizando o Travis CI. Documento disponível em:
 * Integração com [travis](https://github.com/RafaellaJunqueira/Trabalho-Individual-2020-2/blob/master/.travis.yml)
 
+### Referências
+[https://medium.com/@ollelauribostr/start-measuring-coverage-with-jest-travis-ci-and-coveralls-1867928aca42](https://medium.com/@ollelauribostr/start-measuring-coverage-with-jest-travis-ci-and-coveralls-1867928aca42)<br>
+[https://docs.travis-ci.com/user/docker/#using-a-docker-image-from-a-repository-in-a-build](https://docs.travis-ci.com/user/docker/#using-a-docker-image-from-a-repository-in-a-build)<br>
+[https://docs.travis-ci.com/user/coveralls/#using-coveralls-with-other-languages](https://docs.travis-ci.com/user/coveralls/#using-coveralls-with-other-languages)
 
 
 🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀
