@@ -9,7 +9,6 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
   - yarn install
-  - npm install
 
 install:
   - pip install coveralls
@@ -20,9 +19,8 @@ jobs:
       script: docker-compose up --build -d
     - stage: test
       script:
-      - docker-compose run backend python3 manage.py test
-      # - docker-compose run frontend quasar test --unit jest
-      - jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+      - docker-compose run api python3 manage.py test
+      - docker-compose run client quasar test --unit jest
 
 after_script:
   - docker-compose down --remove-orphans
