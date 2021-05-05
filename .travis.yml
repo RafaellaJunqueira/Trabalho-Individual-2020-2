@@ -27,8 +27,8 @@ jobs:
     - stage: coveralls
       script:
       - npm test
-      - npm lint
-      - npm coveralls
+      # - npm lint
+      # - npm coveralls
       
 after_script:
   - docker-compose down --remove-orphans
