@@ -9,6 +9,7 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
   - yarn install
+  - npm install
 
 install:
   - pip install coveralls
