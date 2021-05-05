@@ -16,13 +16,13 @@ install:
 jobs:
   include:
     - stage: build
-      script: docker-compose up --build -d
+      script: docker-compose up --build
     
     - stage: test
       script:
       - docker-compose run backend python3 manage.py test
-      - docker-compose run frontend quasar test --unit jest
-      - docker-compose run test:coveralls
+      # - docker-compose run frontend quasar test --unit jest
+      - npm run test:coveralls
 
 after_script:
   - docker-compose down --remove-orphans
