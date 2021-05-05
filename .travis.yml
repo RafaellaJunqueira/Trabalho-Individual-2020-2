@@ -16,8 +16,7 @@ install:
 jobs:
   include:
     - stage: build
-      script: docker-compose up --build
-    
+      script: docker-compose up --build -d
     - stage: test
       script:
       - docker-compose run backend python3 manage.py test
